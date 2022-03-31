@@ -24,11 +24,7 @@ export default defineConfig({
     }),
     // 基于文件系统的路由
     Pages({
-      dirs: [
-        { dir: resolve(__dirname, './src/pages'), baseRoute: '' },
-        // { dir: 'src/features/**/pages', baseRoute: 'features' },
-        // { dir: 'src/admin/pages', baseRoute: 'admin' },
-      ],
+      dirs: [{ dir: resolve(__dirname, './src/pages'), baseRoute: '' }],
       extensions: ['vue'],
     }),
   ],

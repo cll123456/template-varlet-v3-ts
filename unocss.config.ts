@@ -8,31 +8,7 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    ['logo-img', 'w-7'],
-    ['center-container', 'w-full max-w-4xl px-4 sm:px-6 lg:px-8'],
-    ['section-intro', 'flex flex-col justify-center items-center'],
-    [
-      'page-title',
-      'text-2xl text-green-600 w-full flex justify-center items-center py-2 my-2',
-    ],
-    [
-      'btn',
-      'inline-block px-4 py-1 rounded bg-green-600 text-white cursor-pointer hover:bg-green-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50',
-    ],
-    [
-      'icon-btn',
-      'inline-flex justify-center items-center text-[0.9em] cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-green-600',
-    ],
-    [
-      'icon-btn-nav',
-      'ml-2 h-full inline-flex justify-center items-center text-[0.9em] cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-green-600',
-    ],
-    [
-      'icon-btn-resp',
-      'w-full py-2 inline-flex justify-end items-center text-[0.9em] cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-green-600',
-    ],
-  ],
+  shortcuts: [],
   presets: [
     presetUno(),
     presetAttributify(),

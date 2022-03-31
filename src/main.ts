@@ -11,7 +11,7 @@ console.log(routes)
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: [...routes, { path: '/', redirect: '/first' }],
 })
 
 const app = createApp(App)
