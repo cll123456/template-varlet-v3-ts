@@ -27,6 +27,9 @@ const tableList: Ref<INavbar[]> = ref([
     title: 'Fifth',
     logo: 'i-mdi-numeric-5-box-outline',
     links: { name: 'Home', url: '/fifth' },
+    badge: {
+      value: 2,
+    },
   },
 ])
 </script>

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { ref, PropType } from 'vue'
+import { BadgeProps } from '@varlet/ui'
+import { PropType } from 'vue'
 
 export interface INavbar {
   /**
@@ -23,6 +24,7 @@ export interface INavbar {
      */
     url: string
   }
+  badge?: BadgeProps
 }
 const props = defineProps({
   /**
@@ -72,10 +74,24 @@ const goTo = (url: string) => {
         @click="goTo(item.links.url)"
       >
         <div
+          v-if="!item.badge || item.badge.value === 0"
           :class="`${item.logo} ${
             isCurrentRoutePath(item.links.url) ? props.activeColorClass : ''
           } `"
         ></div>
+        <var-badge
+          v-else
+          type="danger"
+          v-bind="item.badge"
+          position="right-top"
+        >
+          <div
+            :class="`${item.logo} 
+            ${
+              isCurrentRoutePath(item.links.url) ? props.activeColorClass : ''
+            } `"
+          ></div>
+        </var-badge>
         <div
           :style="{
             maxWidth: `${100 / props.tableList.length}vw`,

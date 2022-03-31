@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Navbar: typeof import('./components/Navbar/index.vue')['default']
     VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
+    VarBadge: typeof import('@varlet/ui')['_BadgeComponent']
   }
 }
 
