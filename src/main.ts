@@ -5,7 +5,9 @@ import './main.css'
 import 'uno.css'
 import routes from '~pages'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
 
+const pinia = createPinia()
 // eslint-disable-next-line no-console
 console.log(routes)
 
@@ -17,5 +19,6 @@ const router = createRouter({
 const app = createApp(App)
 
 app.use(router)
+app.use(pinia)
 
 app.mount('#app')

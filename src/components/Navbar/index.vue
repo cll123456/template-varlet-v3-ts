@@ -1,47 +1,20 @@
 <script lang="ts" setup>
-import { BadgeProps } from '@varlet/ui'
-import { PropType } from 'vue'
+import { useNavbarStore } from '@/stores/navbar'
 
-export interface INavbar {
-  /**
-   * navbar title
-   */
-  title: string
-  /**
-   * navbar logo
-   */
-  logo: string
-  /**
-   * navbar router link object
-   */
-  links: {
-    /**
-     * router link name
-     */
-    name: string
-    /**
-     * router link path
-     */
-    url: string
-  }
-  badge?: BadgeProps
-}
-const props = defineProps({
-  /**
-   * 列表数据
-   */
-  tableList: {
-    type: Array as PropType<INavbar[]>,
-    default: () => [],
-  },
-  /**
-   * 激活颜色类名
-   */
-  activeColorClass: {
-    type: String,
-    default: 'text-primary-500',
-  },
-})
+const navbarStore = useNavbarStore()
+// TODO 目前版本的unocss 还不能自动计算生成类名，所以需要手动定义计算属性里面的类名
+const temp = [
+  'i-mdi-home-floor-1',
+  'i-mdi-home-floor-2',
+  'i-mdi-home-floor-3',
+  'i-mdi-numeric-4-box-outline',
+  'i-mdi-numeric-5-box-outline',
+  'text-primary-500',
+]
+
+const navbarList = computed(() => navbarStore.navBarList)
+
+const activeColor = computed(() => navbarStore.activeColorClass)
 
 const route = useRoute()
 const router = useRouter()
@@ -68,7 +41,7 @@ const goTo = (url: string) => {
   >
     <div w-full h-full flex justify-center items-center flex-wrap>
       <div
-        v-for="(item, index) in props.tableList"
+        v-for="(item, index) in navbarList"
         :key="item.title + index"
         class="text-xl justify-center items-center flex flex-col flex-1 p-2 border-gray-500 box-border"
         @click="goTo(item.links.url)"
@@ -76,7 +49,7 @@ const goTo = (url: string) => {
         <div
           v-if="!item.badge || item.badge.value === 0"
           :class="`${item.logo} ${
-            isCurrentRoutePath(item.links.url) ? props.activeColorClass : ''
+            isCurrentRoutePath(item.links.url) ? activeColor : ''
           } `"
         ></div>
         <var-badge
@@ -87,21 +60,17 @@ const goTo = (url: string) => {
         >
           <div
             :class="`${item.logo} 
-            ${
-              isCurrentRoutePath(item.links.url) ? props.activeColorClass : ''
-            } `"
+            ${isCurrentRoutePath(item.links.url) ? activeColor : ''} `"
           ></div>
         </var-badge>
         <div
           :style="{
-            maxWidth: `${100 / props.tableList.length}vw`,
+            maxWidth: `${100 / (navbarList.length + 1)}vw`,
           }"
           text-sm
           h-full
           truncate
-          :class="`${
-            isCurrentRoutePath(item.links.url) ? props.activeColorClass : ''
-          }`"
+          :class="`${isCurrentRoutePath(item.links.url) ? activeColor : ''}`"
         >
           {{ item.title }}
         </div>

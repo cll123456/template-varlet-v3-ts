@@ -28,4 +28,10 @@ export default defineConfig({
       extensions: ['vue'],
     }),
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'), //设置别名
+    },
+    dedupe: ['vue'],
+  },
 })
