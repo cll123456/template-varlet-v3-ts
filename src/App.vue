@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, reactive, Ref } from 'vue'
+const goBack = () => {
+  console.log('goBack')
+}
 </script>
-
 <template>
   <div>
-    <var-app-bar title="标题" />
+    <Header :is-show-go-back="true" title="标题" @go-back="goBack" />
     <router-view />
     <Navbar></Navbar>
   </div>
