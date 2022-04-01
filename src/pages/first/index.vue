@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 </script>
 <template>
-  <div>first</div>
+  <Header title="first" />
+  <div class="exclude-h-n-h">1232</div>
+  <Navbar></Navbar>
 </template>
 
 <style lang="scss" scoped></style>

@@ -65,10 +65,11 @@ const changeTheme = async () => {
         round
         text
         color="transparent"
+        class="!text-xl"
         text-color="#ffffff"
         @click="goBack"
       >
-        <var-icon name="chevron-left" :size="24" />
+        <i class="i-mdi-chevron-left"></i>
       </var-button>
     </template>
     <template #right>

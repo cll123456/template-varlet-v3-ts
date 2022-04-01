@@ -27,19 +27,10 @@ const goTo = (url: string) => {
 </script>
 <template>
   <div
-    h-12
     bg="light-500 dark:dark-500"
-    fixed
-    z-1
-    bottom-0
-    left-0
-    right-0
-    border-t-1
-    border-opacity-100
-    border-gray-500
-    border-dotted
+    class="h-12 fixed z-1 bottom-0 left-0 right-0 border-t-1 border-opacity-100 border-gray-500 dark:border-light-500 border-dotted"
   >
-    <div w-full h-full flex justify-center items-center flex-wrap>
+    <div class="w-full h-full flex justify-center items-center flex-wrap">
       <div
         v-for="(item, index) in navbarList"
         :key="item.title + index"

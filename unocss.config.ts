@@ -8,7 +8,9 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [],
+  shortcuts: [
+    ['exclude-h-n-h', 'h-[calc(100vh-14.4vw-3rem)] bg-gray-100 w-full'],
+  ],
   presets: [
     presetUno(),
     presetAttributify(),

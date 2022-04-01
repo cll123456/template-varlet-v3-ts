@@ -5,9 +5,7 @@ const goBack = () => {
 </script>
 <template>
   <div>
-    <Header :is-show-go-back="true" title="标题" @go-back="goBack" />
     <router-view />
-    <Navbar></Navbar>
   </div>
 </template>
 
