@@ -4,12 +4,12 @@ import { useNavbarStore } from '@/stores/navbar'
 const navbarStore = useNavbarStore()
 // TODO 目前版本的unocss 还不能自动计算生成类名，所以需要手动定义计算属性里面的类名
 const temp = [
-  'i-mdi-home-floor-1',
-  'i-mdi-home-floor-2',
-  'i-mdi-home-floor-3',
+  'i-mdi-numeric-1-box-outline',
+  'i-mdi-numeric-2-box-outline',
+  'i-mdi-numeric-3-box-outline',
   'i-mdi-numeric-4-box-outline',
   'i-mdi-numeric-5-box-outline',
-  'text-primary-500',
+  '!text-primary-500',
 ]
 
 const navbarList = computed(() => navbarStore.navBarList)
@@ -28,7 +28,7 @@ const goTo = (url: string) => {
 <template>
   <div
     h-12
-    bg="body-500"
+    bg="light-500 dark:dark-500"
     fixed
     z-1
     bottom-0
@@ -43,12 +43,12 @@ const goTo = (url: string) => {
       <div
         v-for="(item, index) in navbarList"
         :key="item.title + index"
-        class="text-xl justify-center items-center flex flex-col flex-1 p-2 border-gray-500 box-border"
+        class="text-xl justify-center items-center flex flex-col flex-1 p-2 border-gray-500 dark:border-light-500 box-border"
         @click="goTo(item.links.url)"
       >
         <div
           v-if="!item.badge || item.badge.value === 0"
-          :class="`${item.logo} ${
+          :class="`${item.logo} ${'dark:text-light-500'} ${
             isCurrentRoutePath(item.links.url) ? activeColor : ''
           } `"
         ></div>
@@ -59,7 +59,7 @@ const goTo = (url: string) => {
           position="right-top"
         >
           <div
-            :class="`${item.logo} 
+            :class="`${item.logo} ${'dark:text-light-500'}
             ${isCurrentRoutePath(item.links.url) ? activeColor : ''} `"
           ></div>
         </var-badge>
@@ -67,10 +67,9 @@ const goTo = (url: string) => {
           :style="{
             maxWidth: `${100 / (navbarList.length + 1)}vw`,
           }"
-          text-sm
-          h-full
-          truncate
-          :class="`${isCurrentRoutePath(item.links.url) ? activeColor : ''}`"
+          :class="`${
+            isCurrentRoutePath(item.links.url) ? activeColor : ''
+          } ${'text-sm h-full truncate dark:text-light-500'}`"
         >
           {{ item.title }}
         </div>

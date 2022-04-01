@@ -46,7 +46,8 @@ export default defineConfig({
       disabled: '#e0e0e0',
       text: '#000',
       textDisabled: '#aaa',
-      body: '#fff',
+      light: '#fff',
+      dark: `#272727`,
     },
     fontSize: {
       xs: '.6rem',

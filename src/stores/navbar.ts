@@ -44,7 +44,7 @@ export const useNavbarStore = defineStore<
     navBarList: [
       {
         title: 'First',
-        logo: 'i-mdi-home-floor-1',
+        logo: 'i-mdi-numeric-1-box-outline',
         links: { name: 'Home', url: '/first' },
         badge: {
           value: 0,
@@ -53,7 +53,7 @@ export const useNavbarStore = defineStore<
       },
       {
         title: 'Second',
-        logo: 'i-mdi-home-floor-2',
+        logo: 'i-mdi-numeric-2-box-outline',
         links: { name: 'Home', url: '/second' },
         badge: {
           value: 0,
@@ -62,7 +62,7 @@ export const useNavbarStore = defineStore<
       },
       {
         title: 'Third-long-long-long-name',
-        logo: 'i-mdi-home-floor-3',
+        logo: 'i-mdi-numeric-3-box-outline',
         links: { name: 'Home', url: '/third' },
         badge: {
           value: 0,
@@ -91,7 +91,7 @@ export const useNavbarStore = defineStore<
     /**
      * 激活的navbar的颜色
      */
-    activeColorClass: 'text-primary-500',
+    activeColorClass: '!text-primary-500',
   }),
   actions: {
     /**
