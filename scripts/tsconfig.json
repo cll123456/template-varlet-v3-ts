@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "composite": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2019",
@@ -9,5 +9,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
-  }
+  },
+  "include": ["./../scripts/*.ts"]
 }

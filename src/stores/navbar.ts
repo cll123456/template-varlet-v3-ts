@@ -33,7 +33,9 @@ export interface INavbar {
 
 export const useNavbarStore = defineStore<
   'navbar',
-  { navBarList: INavbar[]; activeColorClass: string }
+  { navBarList: INavbar[]; activeColorClass: string },
+  any,
+  { changeNavBarList: (title: string, content: INavbar) => void }
 >('navbar', {
   state: () => ({
     /**
@@ -44,21 +46,37 @@ export const useNavbarStore = defineStore<
         title: 'First',
         logo: 'i-mdi-home-floor-1',
         links: { name: 'Home', url: '/first' },
+        badge: {
+          value: 0,
+          maxValue: 10,
+        },
       },
       {
         title: 'Second',
         logo: 'i-mdi-home-floor-2',
         links: { name: 'Home', url: '/second' },
+        badge: {
+          value: 0,
+          maxValue: 10,
+        },
       },
       {
         title: 'Third-long-long-long-name',
         logo: 'i-mdi-home-floor-3',
         links: { name: 'Home', url: '/third' },
+        badge: {
+          value: 0,
+          maxValue: 10,
+        },
       },
       {
         title: 'Fourth',
         logo: 'i-mdi-numeric-4-box-outline',
         links: { name: 'Home', url: '/fourth' },
+        badge: {
+          value: 0,
+          maxValue: 10,
+        },
       },
       {
         title: 'Fifth',
@@ -66,6 +84,7 @@ export const useNavbarStore = defineStore<
         links: { name: 'Home', url: '/fifth' },
         badge: {
           value: 2,
+          maxValue: 10,
         },
       },
     ],
@@ -80,7 +99,7 @@ export const useNavbarStore = defineStore<
      * @param title {string} navbar title
      * @param content {INavbar} navbar content 需要改变的内容
      */
-    changeNavBarList(title: string, content: INavbar) {
+    changeNavBarList(title: string, content: Partial<INavbar>) {
       this.navBarList = this.navBarList.map((item) => {
         if (item.title === title) {
           item = { ...item, ...content }

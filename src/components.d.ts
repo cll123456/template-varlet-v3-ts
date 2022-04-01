@@ -4,9 +4,12 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Header: typeof import('./components/Header/index.vue')['default']
     Navbar: typeof import('./components/Navbar/index.vue')['default']
     VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
     VarBadge: typeof import('@varlet/ui')['_BadgeComponent']
+    VarButton: typeof import('@varlet/ui')['_ButtonComponent']
+    VarIcon: typeof import('@varlet/ui')['_IconComponent']
   }
 }
 
