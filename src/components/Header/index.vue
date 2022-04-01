@@ -82,6 +82,8 @@ const changeTheme = async () => {
         <var-icon v-if="!isDark" name="white-balance-sunny" />
         <var-icon v-if="isDark" name="weather-night" :size="24" />
       </var-button>
+      <!-- 插槽，给用户自定义 -->
+      <slot name="right"></slot>
     </template>
   </var-app-bar>
 </template>
