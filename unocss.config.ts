@@ -9,7 +9,12 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['exclude-h-n-h', 'h-[calc(100vh-14.4vw-3rem)] bg-gray-100 w-full'],
+    ['exclude-h-n-s', 'h-[calc(100vh-14.4vw-3rem)] common-content'],
+    ['exclude-h-s', 'h-[calc(100vh-14.4vw)] common-content'],
+    [
+      'common-content',
+      'w-full overflow-y-auto overflow-x-hidden text-black-100 dark:text-white-100 bg-gray-100 dark:bg-gray-500 p-2 hyphens-auto',
+    ],
   ],
   presets: [
     presetUno(),
