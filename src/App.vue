@@ -1,8 +1,4 @@
-<script setup lang="ts">
-const goBack = () => {
-  console.log('goBack')
-}
-</script>
+<script setup lang="ts"></script>
 <template>
   <div>
     <router-view />
