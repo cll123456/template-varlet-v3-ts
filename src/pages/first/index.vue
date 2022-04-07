@@ -1,3 +1,12 @@
+<route>
+{
+  meta: {
+    keepAlive:true,
+    title: 'first',
+    transitionName: 'fade'
+  }
+}
+</route>
 <script lang="ts" setup>
 const router = useRouter()
 const goToDetail = () => {
@@ -5,7 +14,7 @@ const goToDetail = () => {
 }
 </script>
 <template>
-  <Header title="first" />
+  <Header title="first1" />
   <div class="exclude-h-n-s">
     <var-card
       class="m-b-2"

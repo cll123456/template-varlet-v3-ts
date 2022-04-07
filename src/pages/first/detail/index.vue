@@ -1,8 +1,18 @@
+<route>
+{
+  meta: {
+    keepAlive:true,
+    title: 'first detail',
+    transitionName: 'slide_left'
+  }
+}
+</route>
 <script lang="ts" setup>
-212
+import { useRouterAnimation } from '@/hooks/useRouterAnimation'
+useRouterAnimation('first', 'slide_right', 'fade')
 </script>
 <template>
-  <Header title="first detail" :is-show-go-back="true" />
+  <Header :is-show-go-back="true" />
   <div class="exclude-h-s">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi quasi
