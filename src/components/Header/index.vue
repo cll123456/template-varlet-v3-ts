@@ -2,13 +2,13 @@
 import { StyleProvider } from '@varlet/ui'
 const dark = () => import('@varlet/ui/es/themes/dark')
 
-defineProps({
+const props = defineProps({
   /**
    * 标题
    */
   title: {
     type: String,
-    default: '标题',
+    default: '',
   },
   /**
    * 是否展示返回按钮
@@ -28,6 +28,9 @@ const emits = defineEmits<{
 }>()
 
 const router = useRouter()
+const route = useRoute()
+
+const titles = ref(props.title || (route.meta.title as string))
 
 const goBack = () => {
   emits('goBack')
@@ -59,7 +62,7 @@ const changeTheme = async () => {
 }
 </script>
 <template>
-  <var-app-bar :title="title">
+  <var-app-bar :title="titles">
     <template v-if="isShowGoBack" #left>
       <var-button
         round
