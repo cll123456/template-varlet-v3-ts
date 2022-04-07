@@ -71,18 +71,12 @@ export default {
     type: Function as PropType<(error: boolean) => void>,
   },
   /**
-   * 是否使用虚拟dom 默认false,当总的数量达到100条的时候默认开始
+   * 是否使用虚拟dom 默认false,
    */
   useVirtual: {
     type: Boolean,
     required: true,
     default: false,
-  },
-  /**
-   * 更改虚拟dom的方法
-   */
-  'onUpdate:useVirtual': {
-    type: Function as PropType<(useVirtual: boolean) => void>,
   },
   /**
    * 传入的数据

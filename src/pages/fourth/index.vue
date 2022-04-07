@@ -1,9 +1,17 @@
+<route>
+{
+  meta: {
+    keepAlive:true,
+    title: 'fourth'
+  }
+}
+</route>
 <script lang="ts" setup>
 import { IVirtualObject } from '@/components/VirtualList/type'
 import { Ref, ref } from 'vue'
 const loading = ref(false)
-const useVirtual = ref(false)
 const finished = ref(false)
+const useVirtual = ref(false)
 const list: Ref<IVirtualObject[]> = ref([])
 
 const load = () => {
@@ -24,14 +32,14 @@ const load = () => {
 }
 </script>
 <template>
-  <Header title="fourth" />
+  <Header />
   <div class="exclude-h-n-s p-0">
     <VirtualList
       v-model:loading="loading"
+      v-model:use-virtual="useVirtual"
       loading-text="正在努力输出"
       finished-text="一滴都没有了"
       error-text="出错了出错了"
-      :use-virtual="useVirtual"
       :finished="finished"
       :data-list="list"
       @load="load"

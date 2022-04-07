@@ -6,9 +6,6 @@ import { toPxNum, dt, createNamespace } from './utils'
 import VirtualListProps from './props'
 // 属性
 const props = defineProps(VirtualListProps)
-const emits = defineEmits<{
-  (e: 'useVirtual', useVirtual: boolean): void
-}>()
 const { n } = createNamespace('list')
 // 多语言包
 const pack = Locale.pack.value
@@ -58,15 +55,6 @@ onMounted(() => {
 watch(props.dataList, (val, oldVal) => {
   if (val.length > 0 && props.useVirtual) {
     init()
-  } else {
-    console.log(
-      val.length,
-      props['onUpdate:useVirtual'],
-      props['onUpdate:loading'],
-    )
-    if (val.length >= 50) {
-      emits('useVirtual', true)
-    }
   }
 })
 /**
