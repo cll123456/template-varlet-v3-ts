@@ -2,7 +2,6 @@
   "name": "template-varlet-v3-ts",
   "private": false,
   "version": "1.0.0",
-  "homepage": "./",
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build --base=/template-varlet-v3-ts/",
