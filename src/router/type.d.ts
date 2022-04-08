@@ -14,5 +14,22 @@ declare module 'vue-router' {
      * 当前页面的标题
      */
     title?: string
+    /**
+     * 当前页面滚动的位置
+     */
+    scrollPosition?: {
+      /**
+       * 顶部距离
+       */
+      top: number
+      /**
+       * 左侧距离
+       */
+      left: number
+      /**
+       * 滚动的行为
+       */
+      behavior?: ScrollBehavior
+    }
   }
 }

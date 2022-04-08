@@ -30,6 +30,7 @@
   top: 0;
   bottom: 0;
   z-index: 1;
+  opacity: 1;
 }
 
 .fade-enter-from,

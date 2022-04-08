@@ -6,16 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Header: typeof import('./components/Header/index.vue')['default']
     Navbar: typeof import('./components/Navbar/index.vue')['default']
-    Ripple: typeof import('@varlet/ui')['_RippleComponent']
-    VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
-    VarBadge: typeof import('@varlet/ui')['_BadgeComponent']
-    VarButton: typeof import('@varlet/ui')['_ButtonComponent']
-    VarCard: typeof import('@varlet/ui')['_CardComponent']
-    VarCell: typeof import('@varlet/ui')['_CellComponent']
-    VarDivider: typeof import('@varlet/ui')['_DividerComponent']
-    VarIcon: typeof import('@varlet/ui')['_IconComponent']
-    VarList: typeof import('@varlet/ui')['_ListComponent']
-    VarLoading: typeof import('@varlet/ui')['_LoadingComponent']
     VirtualList: typeof import('./components/VirtualList/index.vue')['default']
   }
 }
