@@ -1,23 +1,21 @@
 <script setup lang="ts"></script>
 <template>
-  <div>
-    <router-view v-slot="{ Component, route }">
-      <transition :name="route.meta.transitionName || 'fade'">
-        <template v-if="route.meta.keepAlive">
-          <keep-alive>
-            <div :key="route.path" class="relative">
-              <component :is="Component" />
-            </div>
-          </keep-alive>
-        </template>
-        <template v-else>
-          <div :key="route.path" class="relative">
-            <component :is="Component" />
-          </div>
-        </template>
-      </transition>
-    </router-view>
-  </div>
+  <router-view v-slot="{ Component, route }">
+    <!-- <transition :name="route.meta.transitionName || 'fade'"> -->
+    <template v-if="route.meta.keepAlive">
+      <keep-alive>
+        <div :key="route.path" class="relative">
+          <component :is="Component" />
+        </div>
+      </keep-alive>
+    </template>
+    <template v-else>
+      <div :key="route.path" class="relative">
+        <component :is="Component" />
+      </div>
+    </template>
+    <!-- </transition> -->
+  </router-view>
 </template>
 
 <style>
