@@ -7,6 +7,7 @@
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build --base=/template-varlet-v3-ts/",
     "preview": "vite preview",
+    "deploy": "start deploy.sh",
     "eslint": "eslint --ext .js,ts,.vue --fix src",
     "prettier": "prettier . --write"
   },

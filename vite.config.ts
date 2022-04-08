@@ -34,7 +34,4 @@ export default defineConfig({
     },
     dedupe: ['vue'],
   },
-  build: {
-    outDir: 'docs',
-  },
 })
