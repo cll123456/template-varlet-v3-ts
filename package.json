@@ -1,6 +1,7 @@
 {
   "name": "template-varlet-v3-ts",
   "private": false,
+  "homepage": "./",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --host",
