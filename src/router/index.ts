@@ -1,8 +1,8 @@
 import routes from '~pages'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [...routes, { path: '/', redirect: '/first' }],
 })
 // eslint-disable-next-line no-console

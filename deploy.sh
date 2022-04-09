@@ -14,12 +14,12 @@ cd dist/
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy: 自动部署'
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
- git push -f git@github.com:<cll123456>/<template-varlet-v3-ts>.git master:gh-pages
+ git push -f git@github.com:cll123456/template-varlet-v3-ts.git master:gh-pages
 
 cd -

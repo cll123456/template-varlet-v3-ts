@@ -18,7 +18,6 @@ export function useRouterAnimation(
         transitionName: beforeAnimationName,
       }
     }
-    next()
     // 离开后，改成想要的进入动画
     setTimeout(() => {
       to.meta = {
@@ -26,5 +25,6 @@ export function useRouterAnimation(
         transitionName: afterAnimationName,
       }
     }, 300)
+    next()
   })
 }
