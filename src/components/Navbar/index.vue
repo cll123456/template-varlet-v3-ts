@@ -3,6 +3,7 @@ import { useNavbarStore } from '@/stores/navbar'
 
 const navbarStore = useNavbarStore()
 // TODO 目前版本的unocss 还不能自动计算生成类名，所以需要手动定义计算属性里面的类名
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const temp = [
   'i-mdi-numeric-1-box-outline',
   'i-mdi-numeric-2-box-outline',
@@ -51,7 +52,7 @@ const goTo = (url: string) => {
         >
           <div
             :class="`${item.logo} ${'dark:text-light-500'}
-            ${isCurrentRoutePath(item.links.url) ? activeColor : ''} `"
+          ${isCurrentRoutePath(item.links.url) ? activeColor : ''} `"
           ></div>
         </var-badge>
         <div

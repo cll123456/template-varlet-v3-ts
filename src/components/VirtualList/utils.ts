@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const isString = (val: unknown): val is string => typeof val === 'string'
 
 export const isBool = (val: unknown): val is boolean => typeof val === 'boolean'

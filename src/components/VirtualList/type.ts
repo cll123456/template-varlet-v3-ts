@@ -8,6 +8,7 @@ export interface IVirtualObject {
   /**
    * 其他属性
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }
 

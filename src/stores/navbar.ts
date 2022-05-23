@@ -34,6 +34,7 @@ export interface INavbar {
 export const useNavbarStore = defineStore<
   'navbar',
   { navBarList: INavbar[]; activeColorClass: string },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   any,
   { changeNavBarList: (title: string, content: INavbar) => void }
 >('navbar', {

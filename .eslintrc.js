@@ -1,4 +1,10 @@
 module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -13,11 +19,14 @@ module.exports = {
   ],
 
   rules: {
-    // override/add rules settings here, such as:
+    'prettier/prettier': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+    'vue/v-on-event-hyphenation': 'error',
     'vue/multi-word-component-names': [
-      'error',
+      'warn',
       {
-        ignores: ['Header'],
+        ignores: ['index'],
       },
     ],
   },

@@ -4,6 +4,8 @@ import { Ref, ref } from 'vue'
 import { IListAll } from './type'
 import { toPxNum, dt, createNamespace } from './utils'
 import VirtualListProps from './props'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // 属性
 const props = defineProps(VirtualListProps)
 const { n } = createNamespace('list')
@@ -52,7 +54,7 @@ onMounted(() => {
   }
 })
 
-watch(props.dataList, (val, oldVal) => {
+watch(props.dataList, (val) => {
   if (val.length > 0 && props.useVirtual) {
     init()
   }
@@ -142,7 +144,7 @@ const listHeight = computed(() => {
   return height
 })
 
-const handleScroll = async (e?: UIEvent) => {
+const handleScroll = async () => {
   // 触底操作
   const { loading, finished, error } = props
   if (loading) return

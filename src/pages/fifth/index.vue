@@ -13,8 +13,8 @@
 </route>
 <script lang="ts" setup>
 import { useScrollPosition } from '@/hooks/useScrollPosition'
-import { Ref, ref } from 'vue'
-let scrollDomRef: Ref<HTMLElement | null> = ref(null)
+// import { Ref, ref } from 'vue'
+// let scrollDomRef: Ref<HTMLElement | null> = ref(null)
 useScrollPosition('.scrollDomRef')
 </script>
 <template>
