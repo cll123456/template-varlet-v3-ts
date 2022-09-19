@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useHeadStore } from '@/stores/head'
 import { StyleProvider } from '@varlet/ui'
 const dark = () => import('@varlet/ui/es/themes/dark')
 
@@ -44,12 +45,14 @@ const goBack = () => {
   }
 }
 
+const headStore = useHeadStore()
+
 /**
  * 是否是黑夜模式
  */
-const isDark = ref(false)
+const isDark = computed(() => headStore.isDark)
 const changeTheme = async () => {
-  isDark.value = !isDark.value
+  headStore.changeTheme(!isDark.value)
   const darkStyle = await dark()
   const cls = document.getElementById('app')
   if (isDark.value) {
@@ -83,6 +86,7 @@ const changeTheme = async () => {
         text-color="#ffffff"
         @click="changeTheme"
       >
+        <div>{{ isDark }}</div>
         <var-icon v-if="!isDark" name="white-balance-sunny" />
         <var-icon v-if="isDark" name="weather-night" :size="24" />
       </var-button>
